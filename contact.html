@@ -4,50 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Nexoro Hosting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
   <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Orbitron', sans-serif;
-      background: radial-gradient(ellipse at top, #0f0f1a 0%, #000 100%);
-      color: #00ffff;
-      overflow-x: hidden;
-    }
-
-    header, footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #070711;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      text-shadow: 0 0 10px #00ffff;
-    }
-
-    main {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    .contact-box {
-      background: #111122;
-      border: 2px solid #00ffff44;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 20px #00ffff33;
-      backdrop-filter: blur(4px);
-    }
-
-    .contact-box label {
-      display: block;
-      margin-top: 1rem;
-      color: #ffffff;
-    }
 
     .contact-box input,
     .contact-box textarea {
@@ -132,9 +92,12 @@
 
   <footer>
     &copy; 2025 Nexoro Hosting. All rights reserved.
+
+  <footer>
+    ...existing code...
   </footer>
 
-  <script>
+  <script src="js/theme-switch.js"></script>
     gsap.from("[data-animate]", {
       duration: 1.2,
       y: -50,
