@@ -32,7 +32,7 @@
             <section>
                 <h2>Get in Touch</h2>
                 <p>Have a question or need support? Fill out the form below or connect with us on social media.</p>
-                <form class="contact-form" onsubmit="alert('Message sent successfully!'); return false;">
+                <form id="contact-form" class="contact-form">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your name" required>
 
@@ -43,6 +43,7 @@
                     <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
 
                     <button type="submit" class="button">Send Message</button>
+                    <div id="form-status"></div>
                 </form>
             </section>
 
@@ -65,7 +66,79 @@
         const icon = themeSwitcher.querySelector('i');
         const setTheme = (theme) => { body.classList.toggle('dark-mode', theme === 'dark'); icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; localStorage.setItem('theme', theme); };
         themeSwitcher.addEventListener('click', () => { body.classList.contains('dark-mode') ? setTheme('light') : setTheme('dark'); });
-        document.addEventListener('DOMContentLoaded', () => { setTheme(localStorage.getItem('theme') || 'light'); });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTheme(localStorage.getItem('theme') || 'light');
+
+            const contactForm = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent default browser submission
+
+                    // --- PASTE YOUR DISCORD WEBHOOK URL HERE ---
+                    const webhookURL = 'https://discord.com/api/webhooks/1400114420562133014/MxaDLfK3Y9Nbv2li_nL6HWcYEaucnzyEMBKjP6zmrxiDsdco2sfrN-m_uhkyIc8ZvmFs';
+                    // -----------------------------------------
+
+                    const submitButton = contactForm.querySelector('button[type="submit"]');
+                    const formData = new FormData(contactForm);
+                    const name = formData.get('name');
+                    const email = formData.get('email');
+                    const message = formData.get('message');
+
+                    if (!webhookURL.startsWith('https://discord.com/api/webhooks/')) {
+                        formStatus.textContent = 'Webhook URL is not configured correctly.';
+                        formStatus.className = 'form-status error';
+                        return;
+                    }
+
+                    // Disable button and show sending message
+                    submitButton.disabled = true;
+                    submitButton.textContent = 'Sending...';
+                    formStatus.textContent = '';
+
+                    // Create a nicely formatted embed for Discord
+                    const payload = {
+                        username: "Nexoro Contact Bot",
+                        embeds: [{
+                            title: `New Message from ${name}`,
+                            color: 16761095, // A nice amber/yellow color
+                            fields: [
+                                { name: "Email Address", value: email, inline: true },
+                                { name: "Timestamp", value: new Date().toUTCString(), inline: true },
+                                { name: "Message", value: message }
+                            ],
+                            footer: { text: "Submitted via nexorohosting.com" }
+                        }]
+                    };
+
+                    // Send the data using the Fetch API
+                    fetch(webhookURL, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload),
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            formStatus.textContent = 'Message sent! We will get back to you soon.';
+                            formStatus.className = 'form-status success';
+                            contactForm.reset();
+                        } else {
+                            throw new Error('Failed to send message. Please try again later.');
+                        }
+                    })
+                    .catch(error => {
+                        formStatus.textContent = error.message;
+                        formStatus.className = 'form-status error';
+                    })
+                    .finally(() => {
+                        submitButton.disabled = false;
+                        submitButton.textContent = 'Send Message';
+                    });
+                });
+            }
+        });
     </script>
 </body>
 </html>

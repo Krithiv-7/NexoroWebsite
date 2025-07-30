@@ -428,3 +428,16 @@ footer {
     border-color: var(--accent);
     border-width: 2px;
 }
+
+/* --- Form Status Messages --- */
+#form-status {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: bold;
+}
+.form-status.success {
+    color: #28a745;
+}
+.form-status.error {
+    color: #dc3545;
+}

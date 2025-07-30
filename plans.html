@@ -262,29 +262,6 @@
         const setTheme = (theme) => { body.classList.toggle('dark-mode', theme === 'dark'); icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; localStorage.setItem('theme', theme); };
         themeSwitcher.addEventListener('click', () => { body.classList.contains('dark-mode') ? setTheme('light') : setTheme('dark'); });
 
-        // --- Plan Switcher Logic ---
-        const planButtons = document.querySelectorAll('.plan-switcher .button');
-        const planSections = document.querySelectorAll('.plan-section');
-
-        planButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const targetPlan = button.getAttribute('data-plan');
-
-                // Update button active state
-                planButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                // Update section visibility
-                planSections.forEach(section => {
-                    if (section.id === `${targetPlan}-plans`) {
-                        section.classList.add('active');
-                    } else {
-                        section.classList.remove('active');
-                    }
-                });
-            });
-        });
-
         // --- Reusable PayPal Button Function ---
         function renderPayPalButton(containerId, planName, amount) {
             // Ensure the container exists before trying to render a button
@@ -315,6 +292,29 @@
         // --- Initialize Page ---
         document.addEventListener('DOMContentLoaded', () => {
             setTheme(localStorage.getItem('theme') || 'light');
+
+            // --- Plan Switcher Logic ---
+            const planButtons = document.querySelectorAll('.plan-switcher .button');
+            const planSections = document.querySelectorAll('.plan-section');
+
+            planButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetPlan = button.getAttribute('data-plan');
+
+                    // Update button active state
+                    planButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Update section visibility
+                    planSections.forEach(section => {
+                        if (section.id === `${targetPlan}-plans`) {
+                            section.classList.add('active');
+                        } else {
+                            section.classList.remove('active');
+                        }
+                    });
+                });
+            });
 
             // Render PayPal buttons for Minecraft plans
             renderPayPalButton('paypal-mc-starter', 'Minecraft Starter', '3.00');
