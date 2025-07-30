@@ -116,27 +116,7 @@
         <p>&copy; 2024 Nexoro Hosting. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // --- Theme Switcher Logic ---
-        const themeSwitcher = document.getElementById('theme-switcher');
-        const body = document.body;
-        const icon = themeSwitcher.querySelector('i');
-
-        const setTheme = (theme) => {
-            body.classList.toggle('dark-mode', theme === 'dark');
-            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-            localStorage.setItem('theme', theme);
-        };
-
-        themeSwitcher.addEventListener('click', () => {
-            body.classList.contains('dark-mode') ? setTheme('light') : setTheme('dark');
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            setTheme(savedTheme);
-        });
-    </script>
+    <script src="js/main.js"></script>
 
 </body>
 </html>
