@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hosting Plans | Nexoro Hosting</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Nexoro Hosting</h1>
+            <div class="header-right">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="plans.html">Plans</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <a href="#" class="button button-sm">Client Area</a>
+                <!-- Theme Switcher Button -->
+                <button id="theme-switcher" class="theme-switcher" aria-label="Switch theme"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <h2>Our Hosting Plans</h2>
+                <p style="text-align: center; margin-top: -1rem; margin-bottom: 2rem;">Pick a plan that suits your project.</p>
+                <div class="services-grid">
+                    <!-- Free Trial -->
+                    <div class="card">
+                        <h3>Free Trial</h3>
+                        <p class="price">Free</p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> 1 GB RAM</li>
+                            <li><i class="fas fa-check"></i> 5 Players Limit</li>
+                            <li><i class="fas fa-check"></i> 2 GB SSD Storage</li>
+                            <li><i class="fas fa-times"></i> No Backup</li>
+                        </ul>
+                        <a href="#" class="button">Start Trial</a>
+                    </div>
+                    <!-- Starter -->
+                    <div class="card">
+                        <h3>Starter</h3>
+                        <p class="price">$3<span>/mo</span></p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> 2 GB RAM</li>
+                            <li><i class="fas fa-check"></i> 10 Players Limit</li>
+                            <li><i class="fas fa-check"></i> 5 GB SSD Storage</li>
+                            <li><i class="fas fa-check"></i> 1 Backup</li>
+                        </ul>
+                        <a href="#" class="button">Choose Plan</a>
+                    </div>
+                    <!-- Pro -->
+                    <div class="card">
+                        <h3>Pro</h3>
+                        <p class="price">$8<span>/mo</span></p>
+                        <ul class="plan-features">
+                            <li><i class="fas fa-check"></i> 4 GB RAM</li>
+                            <li><i class="fas fa-check"></i> 25 Players Limit</li>
+                            <li><i class="fas fa-check"></i> 10 GB SSD Storage</li>
+                            <li><i class="fas fa-check"></i> 2 Backups</li>
+                        </ul>
+                        <a href="#" class="button">Choose Plan</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="social-icons">
+            <a href="https://discord.gg/WTSpxYuU9Q" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 Nexoro Hosting. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Theme Switcher Logic (same as other pages) ---
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const body = document.body;
+        const icon = themeSwitcher.querySelector('i');
+        const setTheme = (theme) => { body.classList.toggle('dark-mode', theme === 'dark'); icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; localStorage.setItem('theme', theme); };
+        themeSwitcher.addEventListener('click', () => { body.classList.contains('dark-mode') ? setTheme('light') : setTheme('dark'); });
+        document.addEventListener('DOMContentLoaded', () => { setTheme(localStorage.getItem('theme') || 'light'); });
+    </script>
+
+</body>
+</html>

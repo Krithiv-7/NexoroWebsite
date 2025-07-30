@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Nexoro Hosting</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Nexoro Hosting</h1>
+            <div class="header-right">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="plans.html">Plans</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <a href="#" class="button button-sm">Client Area</a>
+                <!-- Theme Switcher Button -->
+                <button id="theme-switcher" class="theme-switcher" aria-label="Switch theme"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <h2>About Us</h2>
+                <p>Welcome to NEXORO Hosting, where your digital projects become reality. Founded by tech enthusiasts and built for creators, our goal is to offer lightning-fast, affordable, and reliable hosting for websites, game servers, and bots for users across the world. Whether you're just getting started or managing a massive project, we’ve got the tools you need to thrive.</p>
+            </section>
+            <section>
+                <h2>Our Mission</h2>
+                <p>To provide a powerful, easy-to-use hosting experience that empowers developers and creators alike. We aim to deliver top-tier performance, unmatched support, and plans for every level of your journey.</p>
+            </section>
+            <section>
+                <h2>Terms of Service</h2>
+                <p>By using our services, you agree to our terms, which include responsible use of resources and adherence to legal standards. We reserve the right to suspend accounts that violate these terms. For full details, please review our official ToS document.</p>
+            </section>
+            <section>
+                <h2>Privacy Policy</h2>
+                <p>We respect your privacy and are committed to protecting your personal data. We only collect the necessary information to manage your account and never sell your data. Your payment information is securely processed by our payment partners and is not stored on our servers.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <p>Ready to start your project? Get in touch with our team!</p>
+        <div class="social-icons">
+            <a href="https://discord.gg/WTSpxYuU9Q" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 Nexoro Hosting. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Theme Switcher Logic ---
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const body = document.body;
+        const icon = themeSwitcher.querySelector('i');
+        const setTheme = (theme) => {
+            body.classList.toggle('dark-mode', theme === 'dark');
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            localStorage.setItem('theme', theme);
+        };
+        themeSwitcher.addEventListener('click', () => {
+            body.classList.contains('dark-mode') ? setTheme('light') : setTheme('dark');
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+        });
+    </script>
+
+</body>
+</html>

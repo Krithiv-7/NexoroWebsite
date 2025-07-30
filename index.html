@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexoro Hosting - Futuristic Web Hosting</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Nexoro Hosting</h1>
+            <div class="header-right">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="plans.html">Plans</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <a href="#" class="button button-sm">Client Area</a>
+                <!-- Theme Switcher Button -->
+                <button id="theme-switcher" class="theme-switcher" aria-label="Switch theme"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section class="hero">
+                <h2>Powerful, Fast, and Reliable Hosting</h2>
+                <p>Take your website to the next level with our premium hosting solutions.</p>
+                <a href="#pricing" class="button">Get Started Today</a>
+            </section>
+
+            <section id="services">
+                <h2>Our Hosting Solutions</h2>
+                <div class="services-grid">
+                    <div class="card">
+                        <i class="fas fa-server service-icon"></i>
+                        <h3>Web Hosting</h3>
+                        <p>Blazing fast, reliable, and secure hosting for your personal or business website.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-gamepad service-icon"></i>
+                        <h3>Game Servers</h3>
+                        <p>Low-latency hosting for your favorite games like Minecraft, Rust, and more!</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-robot service-icon"></i>
+                        <h3>Discord Bot Hosting</h3>
+                        <p>Keep your Discord bots online 24/7 with our dependable and affordable hosting.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="why-us">
+                <h2>Why Choose Nexoro?</h2>
+                <div class="services-grid">
+                    <div class="card">
+                        <i class="fas fa-tachometer-alt service-icon"></i>
+                        <h3>Unmatched Performance</h3>
+                        <p>Our infrastructure is built on cutting-edge hardware with NVMe SSDs to ensure your projects run at blazing-fast speeds. We guarantee 99.9% uptime, so you can rest easy knowing your service is always online.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-shield-alt service-icon"></i>
+                        <h3>Top-Tier Security</h3>
+                        <p>All our plans come with robust DDoS protection and regular automated backups, keeping your data safe and secure from threats. Your peace of mind is our priority.</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-headset service-icon"></i>
+                        <h3>Dedicated 24/7 Support</h3>
+                        <p>Our expert support team is available around the clock to help you with any issues. We're passionate about hosting and dedicated to your success. Get help whenever you need it.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="pricing">
+                <h2>Simple, Transparent Pricing</h2>
+                <div class="services-grid">
+                    <!-- Web Hosting Card -->
+                    <div class="card">
+                        <i class="fas fa-server service-icon"></i>
+                        <h3>Web Hosting</h3>
+                        <p>Secure and reliable hosting for your website, starting from just <strong>$5/mo</strong>.</p>
+                        <a href="plans.html" class="button">View Web Plans</a>
+                    </div>
+                    <!-- Minecraft Hosting Card -->
+                    <div class="card">
+                        <i class="fas fa-gamepad service-icon"></i>
+                        <h3>Minecraft Hosting</h3>
+                        <p>Powerful, low-latency servers for your Minecraft world, starting at <strong>$3/mo</strong>.</p>
+                        <a href="plans.html" class="button">View Game Plans</a>
+                    </div>
+                    <!-- Bot Hosting Card -->
+                    <div class="card">
+                        <i class="fas fa-robot service-icon"></i>
+                        <h3>Discord Bot Hosting</h3>
+                        <p>Keep your bot online 24/7 with our dependable hosting, from only <strong>$3/mo</strong>.</p>
+                        <a href="plans.html" class="button">View Bot Plans</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <p>Ready to start your project? Get in touch with our team!</p>
+        <div class="social-icons">
+            <a href="https://discord.gg/WTSpxYuU9Q" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 Nexoro Hosting. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Theme Switcher Logic ---
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const body = document.body;
+        const icon = themeSwitcher.querySelector('i');
+
+        const setTheme = (theme) => {
+            body.classList.toggle('dark-mode', theme === 'dark');
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            localStorage.setItem('theme', theme);
+        };
+
+        themeSwitcher.addEventListener('click', () => {
+            body.classList.contains('dark-mode') ? setTheme('light') : setTheme('dark');
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+        });
+    </script>
+
+</body>
+</html>

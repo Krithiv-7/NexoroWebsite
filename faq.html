@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Nexoro Hosting</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1 class="logo">Nexoro Hosting</h1>
+            <div class="header-right">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="plans.html">Plans</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <a href="#" class="button button-sm">Client Area</a>
+                <!-- Theme Switcher Button -->
+                <button id="theme-switcher" class="theme-switcher" aria-label="Switch theme"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section>
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>How do I start a server?</summary>
+                        <div class="faq-answer">Choose a plan, sign up, and follow the setup instructions in your dashboard. Your server will be set up instantly.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can I upgrade my plan later?</summary>
+                        <div class="faq-answer">Yes, you can upgrade or downgrade your plan anytime directly from your account panel without losing any data.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is there a free trial?</summary>
+                        <div class="faq-answer">Yes! We offer a one-time free trial for new users to test our platform. You can find it on our plans page.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How do I contact support?</summary>
+                        <div class="faq-answer">You can use our contact form for general inquiries or join our Discord server for real-time technical support from our team and the community.</div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What is your refund policy?</summary>
+                        <div class="faq-answer">We offer a 48-hour money-back guarantee on all new hosting plan purchases. Please contact support to request a refund.</div>
+                    </details>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer id="contact">
+        <div class="social-icons">
+            <a href="https://discord.gg/WTSpxYuU9Q" target="_blank" aria-label="Discord"><i class="fab fa-discord"></i></a>
+            <a href="#" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        </div>
+        <p>&copy; 2024 Nexoro Hosting. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // --- Theme Switcher Logic (same as other pages) ---
+        const themeSwitcher = document.getElementById('theme-switcher');
+        const body = document.body;
+        const icon = themeSwitcher.querySelector('i');
+        const setTheme = (theme) => {
+            body.classList.toggle('dark-mode', theme === 'dark');
+            icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            localStorage.setItem('theme', theme);
+        };
+        themeSwitcher.addEventListener('click', () => {
+            body.classList.contains('dark-mode') ? setTheme('light') : setTheme('dark');
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            setTheme(savedTheme);
+        });
+    </script>
+
+</body>
+</html>
