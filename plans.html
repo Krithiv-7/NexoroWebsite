@@ -4,11 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hosting Plans | Nexoro Hosting</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> 
   <script src="https://www.paypal.com/sdk/js?client-id=Afqmp_Y7nyhwD6C7C3o1ii_IKGNmZiOtPJz36YxQzX042eEP5SG5qDiOFNxCgo0Aw_iJdNIhtuV2zMWF&currency=USD"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/ui"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #111827, #1f2937);
+      color: white;
+    }
+  </style>
 </head>
 <body>
 
@@ -48,6 +55,20 @@
         <li>✔ Online panel</li>
         <li>⚡ Instant setup</li>
       </ul>
+     <div id="paypal-button-starter" class="mt-4"></div>
+      <script>
+      paypal.Buttons({
+      createOrder: (data, actions) => actions.order.create({
+      purchase_units: [{
+      amount: { value: '3.00' },
+      description: 'Nexoro Hosting – Starter Plan'
+      }]
+      }),
+      onApprove: (data, actions) => actions.order.capture().then((details) => {
+      alert('Thanks, ' + details.payer.name.given_name + '! 🎉 Starter Plan activated.');
+      })
+      }).render('#paypal-button-starter');
+      </script>
     </div>
 
     <div class="bg-gray-900 rounded-2xl shadow-xl p-6 border border-green-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="200">
@@ -63,6 +84,20 @@
         <li>✔ Online panel</li>
         <li>⚡ Instant setup</li>
       </ul>
+      <div id="paypal-button-pro" class="mt-4"></div>
+      <script>
+      paypal.Buttons({
+      createOrder: (data, actions) => actions.order.create({
+      purchase_units: [{
+      amount: { value: '8.00' },
+      description: 'Nexoro Hosting – Pro Plan'
+      }]
+      }),
+      onApprove: (data, actions) => actions.order.capture().then((details) => {
+      alert('Thanks, ' + details.payer.name.given_name + '! 🎉 Pro Plan activated.');
+      })
+      }).render('#paypal-button-pro');
+      </script>
     </div>
 
     <div class="bg-gray-900 rounded-2xl shadow-xl p-6 border border-yellow-500 hover:scale-105 transform transition duration-300" data-aos="fade-up">
@@ -78,6 +113,20 @@
         <li>✔ 24/7 online</li>
         <li>⚡ Instant setup</li>
       </ul>
+      <div id="paypal-button-elite" class="mt-4"></div>
+      <script>
+      paypal.Buttons({
+      createOrder: (data, actions) => actions.order.create({
+      purchase_units: [{
+      amount: { value: '15.00' },
+      description: 'Nexoro Hosting – Elite Plan'
+      }]
+      }),
+      onApprove: (data, actions) => actions.order.capture().then((details) => {
+      alert('Thanks, ' + details.payer.name.given_name + '! 🎉 Elite Plan activated.');
+      })
+      }).render('#paypal-button-elite');
+      </script>
     </div>
 
     <div class="bg-gray-900 rounded-2xl shadow-xl p-6 border border-purple-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="100">
@@ -93,6 +142,20 @@
         <li>✔ 24/7 online</li>
         <li>⚡ Instant setup</li>
       </ul>
+      <div id="paypal-button-legendary" class="mt-4"></div>
+      <script>
+      paypal.Buttons({
+      createOrder: (data, actions) => actions.order.create({
+      purchase_units: [{
+      amount: { value: '25.00' },
+      description: 'Nexoro Hosting – legendary Plan'
+      }]
+      }),
+      onApprove: (data, actions) => actions.order.capture().then((details) => {
+      alert('Thanks, ' + details.payer.name.given_name + '! 🎉 legendary Plan activated.');
+      })
+      }).render('#paypal-button-legendary');
+      </script>
     </div>
 
     <div class="bg-gray-900 rounded-2xl shadow-xl p-6 border border-pink-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="200">
@@ -108,6 +171,20 @@
         <li>✔ DDoS Protection</li>
         <li>⚡ Instant setup</li>
       </ul>
+      <div id="paypal-button-ultimate" class="mt-4"></div>
+      <script>
+      paypal.Buttons({
+      createOrder: (data, actions) => actions.order.create({
+      purchase_units: [{
+      amount: { value: '37.00' },
+      description: 'Nexoro Hosting – Ultimate Plan'
+      }]
+      }),
+      onApprove: (data, actions) => actions.order.capture().then((details) => {
+      alert('Thanks, ' + details.payer.name.given_name + '! 🎉 Ultimate Plan activated.');
+      })
+      }).render('#paypal-button-ultimate');
+      </script>
     </div>
 
     <div class="bg-gradient-to-br from-red-600 to-black-700 text-black rounded-2xl shadow-xl p-6 hover:scale-105 transform transition duration-300 col-span-full lg:col-span-1 lg:col-start-2" data-aos="zoom-in">
@@ -129,13 +206,13 @@
       createOrder: (data, actions) => actions.order.create({
       purchase_units: [{
       amount: { value: '50.00' },
-      description: 'Nexoro Hosting– Starter Plan'
+      description: 'Nexoro Hosting– Galaxy Plan'
       }]
       }),
       onApprove: (data, actions) => actions.order.capture().then((details) => {
-      alert('Thanks, ' + details.payer.name.given_name + '! 🎉 Starter Plan activated.');
+      alert('Thanks, ' + details.payer.name.given_name + '! 🎉 Galaxy Plan activated.');
       })
-      }).render('#paypal-button-starter');
+      }).render('#paypal-button-galaxy');
       </script>
     </div>
 
@@ -147,6 +224,5 @@
       duration: 1000,
     });
   </script>
-  <script src="js/theme-switch.js"></script>
 </body>
-</html>
+      </html>
