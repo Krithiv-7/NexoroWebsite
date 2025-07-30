@@ -377,3 +377,54 @@ footer {
     display: block;
     text-align: right;
 }
+
+/* --- Plans Page Specifics --- */
+.plan-switcher {
+    text-align: center;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.plan-switcher .button {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--card-border);
+}
+
+.plan-switcher .button.active {
+    background-color: var(--accent);
+    color: var(--button-text-color);
+    border-color: var(--accent);
+    transform: translateY(-2px) scale(1.04);
+}
+
+.plan-section {
+    display: none;
+    animation: fadeIn 0.8s ease;
+}
+
+.plan-section.active {
+    display: block;
+}
+
+.paypal-button-container {
+    margin-top: 1.5rem;
+}
+
+/* Styles for a featured, centered plan card */
+.featured-plan-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    animation: fadeIn 1.2s ease; /* Match other animations */
+}
+
+.featured-plan-container .card {
+    width: 100%;
+    max-width: 380px; /* A bit wider to stand out */
+    border-color: var(--accent);
+    border-width: 2px;
+}

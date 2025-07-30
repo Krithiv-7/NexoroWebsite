@@ -7,6 +7,8 @@
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <!-- PayPal SDK - IMPORTANT: Replace with your own Client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=Afqmp_Y7nyhwD6C7C3o1ii_IKGNmZiOtPJz36YxQzX042eEP5SG5qDiOFNxCgo0Aw_iJdNIhtuV2zMWF&currency=USD"></script>
 </head>
 <body>
 
@@ -31,43 +33,212 @@
         <div class="container">
             <section>
                 <h2>Our Hosting Plans</h2>
-                <p style="text-align: center; margin-top: -1rem; margin-bottom: 2rem;">Pick a plan that suits your project.</p>
-                <div class="services-grid">
-                    <!-- Free Trial -->
-                    <div class="card">
-                        <h3>Free Trial</h3>
-                        <p class="price">Free</p>
-                        <ul class="plan-features">
-                            <li><i class="fas fa-check"></i> 1 GB RAM</li>
-                            <li><i class="fas fa-check"></i> 5 Players Limit</li>
-                            <li><i class="fas fa-check"></i> 2 GB SSD Storage</li>
-                            <li><i class="fas fa-times"></i> No Backup</li>
-                        </ul>
-                        <a href="#" class="button">Start Trial</a>
+                <p style="text-align: center; margin-top: -1rem; margin-bottom: 2rem;">Find the perfect solution for your project.</p>
+
+                <!-- Plan Type Switcher -->
+                <div class="plan-switcher">
+                    <button class="button active" data-plan="minecraft">Minecraft Hosting</button>
+                    <button class="button" data-plan="web">Web Hosting</button>
+                    <button class="button" data-plan="discord">Discord Bot Hosting</button>
+                </div>
+
+                <!-- Minecraft Plans -->
+                <div id="minecraft-plans" class="plan-section active">
+                    <div class="services-grid">
+                        <div class="card">
+                            <h3>Free Trial</h3>
+                            <p class="price">Free</p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 1 GB RAM</li>
+                                <li><i class="fas fa-check"></i> 5 Players Limit</li>
+                                <li><i class="fas fa-check"></i> 2 GB SSD Storage</li>
+                                <li><i class="fas fa-times"></i> No Backup</li>
+                                <li><i class="fas fa-times"></i> No Control Panel</li>
+                                <li><i class="fas fa-info-circle"></i> 2 Hours Only</li>
+                            </ul>
+                            <a href="#" class="button">Claim Trial</a>
+                        </div>
+                        <div class="card">
+                            <h3>Starter</h3>
+                            <p class="price">$3<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 2 GB RAM</li>
+                                <li><i class="fas fa-check"></i> 10 Players Limit</li>
+                                <li><i class="fas fa-check"></i> 5 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> 1 Backup</li>
+                                <li><i class="fas fa-check"></i> Instant Setup</li>
+                            </ul>
+                            <div id="paypal-mc-starter" class="paypal-button-container"></div>
+                        </div>
+                        <div class="card">
+                            <h3>Pro</h3>
+                            <p class="price">$8<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 4 GB RAM</li>
+                                <li><i class="fas fa-check"></i> 25 Players Limit</li>
+                                <li><i class="fas fa-check"></i> 10 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> 2 Backups</li>
+                                <li><i class="fas fa-check"></i> Free Subdomain</li>
+                            </ul>
+                            <div id="paypal-mc-pro" class="paypal-button-container"></div>
+                        </div>
+                        <div class="card">
+                            <h3>Elite</h3>
+                            <p class="price">$15<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 6 GB RAM</li>
+                                <li><i class="fas fa-check"></i> 40 Players Limit</li>
+                                <li><i class="fas fa-check"></i> 15 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> 2 Backups</li>
+                                <li><i class="fas fa-check"></i> Mod Support</li>
+                            </ul>
+                            <div id="paypal-mc-elite" class="paypal-button-container"></div>
+                        </div>
+                        <div class="card">
+                            <h3>Legendary</h3>
+                            <p class="price">$25<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 8 GB RAM</li>
+                                <li><i class="fas fa-check"></i> 60 Players Limit</li>
+                                <li><i class="fas fa-check"></i> 25 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> 3 Backups</li>
+                                <li><i class="fas fa-check"></i> DDoS Protection</li>
+                            </ul>
+                            <div id="paypal-mc-legendary" class="paypal-button-container"></div>
+                        </div>
+                        <div class="card">
+                            <h3>Ultimate</h3>
+                            <p class="price">$37<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 12 GB RAM</li>
+                                <li><i class="fas fa-check"></i> 80 Players Limit</li>
+                                <li><i class="fas fa-check"></i> 40 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> 5 Backups</li>
+                                <li><i class="fas fa-check"></i> Multiverse Support</li>
+                            </ul>
+                            <div id="paypal-mc-ultimate" class="paypal-button-container"></div>
+                        </div>
                     </div>
-                    <!-- Starter -->
-                    <div class="card">
-                        <h3>Starter</h3>
-                        <p class="price">$3<span>/mo</span></p>
-                        <ul class="plan-features">
-                            <li><i class="fas fa-check"></i> 2 GB RAM</li>
-                            <li><i class="fas fa-check"></i> 10 Players Limit</li>
-                            <li><i class="fas fa-check"></i> 5 GB SSD Storage</li>
-                            <li><i class="fas fa-check"></i> 1 Backup</li>
-                        </ul>
-                        <a href="#" class="button">Choose Plan</a>
+                    <!-- Featured Plan Wrapper -->
+                    <div class="featured-plan-container">
+                        <div class="card">
+                            <h3>Galaxy</h3>
+                            <p class="price">$50<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 16 GB RAM</li>
+                                <li><i class="fas fa-check"></i> 100+ Players</li>
+                                <li><i class="fas fa-check"></i> 80 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> Unlimited Backups</li>
+                                <li><i class="fas fa-check"></i> Premium Support</li>
+                            </ul>
+                            <div id="paypal-mc-galaxy" class="paypal-button-container"></div>
+                        </div>
                     </div>
-                    <!-- Pro -->
-                    <div class="card">
-                        <h3>Pro</h3>
-                        <p class="price">$8<span>/mo</span></p>
-                        <ul class="plan-features">
-                            <li><i class="fas fa-check"></i> 4 GB RAM</li>
-                            <li><i class="fas fa-check"></i> 25 Players Limit</li>
-                            <li><i class="fas fa-check"></i> 10 GB SSD Storage</li>
-                            <li><i class="fas fa-check"></i> 2 Backups</li>
-                        </ul>
-                        <a href="#" class="button">Choose Plan</a>
+                </div>
+
+                <!-- Web Hosting Plans -->
+                <div id="web-plans" class="plan-section">
+                    <div class="services-grid">
+                        <div class="card">
+                            <h3>Basic Web</h3>
+                            <p class="price">$5<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 1 Website</li>
+                                <li><i class="fas fa-check"></i> 10 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> 100 GB Bandwidth</li>
+                                <li><i class="fas fa-check"></i> Free SSL Certificate</li>
+                            </ul>
+                            <div id="paypal-web-basic" class="paypal-button-container"></div>
+                        </div>
+                        <div class="card">
+                            <h3>Business Web</h3>
+                            <p class="price">$10<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 5 Websites</li>
+                                <li><i class="fas fa-check"></i> 50 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> Unmetered Bandwidth</li>
+                                <li><i class="fas fa-check"></i> Free Domain Name</li>
+                            </ul>
+                            <div id="paypal-web-business" class="paypal-button-container"></div>
+                        </div>
+                        <div class="card">
+                            <h3>Pro Web</h3>
+                            <p class="price">$18<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> Unlimited Websites</li>
+                                <li><i class="fas fa-check"></i> 100 GB NVMe Storage</li>
+                                <li><i class="fas fa-check"></i> Unmetered Bandwidth</li>
+                                <li><i class="fas fa-check"></i> Daily Backups</li>
+                            </ul>
+                            <div id="paypal-web-pro" class="paypal-button-container"></div>
+                        </div>
+                    </div>
+                    <!-- Featured Plan Wrapper -->
+                    <div class="featured-plan-container">
+                        <div class="card">
+                            <h3>Reseller</h3>
+                            <p class="price">$30<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 25 cPanel Accounts</li>
+                                <li><i class="fas fa-check"></i> 150 GB NVMe Storage</li>
+                                <li><i class="fas fa-check"></i> WHM Access</li>
+                                <li><i class="fas fa-check"></i> Private Nameservers</li>
+                            </ul>
+                            <div id="paypal-web-reseller" class="paypal-button-container"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Discord Bot Hosting Plans -->
+                <div id="discord-plans" class="plan-section">
+                    <div class="services-grid">
+                        <div class="card">
+                            <h3>Nano Bot</h3>
+                            <p class="price">$3<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 512 MB RAM</li>
+                                <li><i class="fas fa-check"></i> 1 CPU Core</li>
+                                <li><i class="fas fa-check"></i> 2 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> 24/7 Online</li>
+                            </ul>
+                            <div id="paypal-bot-nano" class="paypal-button-container"></div>
+                        </div>
+                        <div class="card">
+                            <h3>Mega Bot</h3>
+                            <p class="price">$5<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 1 GB RAM</li>
+                                <li><i class="fas fa-check"></i> 1 vCPU Core</li>
+                                <li><i class="fas fa-check"></i> 5 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> Database Support</li>
+                            </ul>
+                            <div id="paypal-bot-mega" class="paypal-button-container"></div>
+                        </div>
+                        <div class="card">
+                            <h3>Giga Bot</h3>
+                            <p class="price">$7<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 2 GB RAM</li>
+                                <li><i class="fas fa-check"></i> 2 CPU Cores</li>
+                                <li><i class="fas fa-check"></i> 10 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> 24/7 Online</li>
+                            </ul>
+                            <div id="paypal-bot-giga" class="paypal-button-container"></div>
+                        </div>
+                    </div>
+                    <!-- Featured Plan Wrapper -->
+                    <div class="featured-plan-container">
+                        <div class="card">
+                            <h3>Tera Bot</h3>
+                            <p class="price">$12<span>/mo</span></p>
+                            <ul class="plan-features">
+                                <li><i class="fas fa-check"></i> 4 GB RAM</li>
+                                <li><i class="fas fa-check"></i> 2 vCPU Cores</li>
+                                <li><i class="fas fa-check"></i> 20 GB SSD Storage</li>
+                                <li><i class="fas fa-check"></i> Sharding Support</li>
+                            </ul>
+                            <div id="paypal-bot-tera" class="paypal-button-container"></div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -90,7 +261,81 @@
         const icon = themeSwitcher.querySelector('i');
         const setTheme = (theme) => { body.classList.toggle('dark-mode', theme === 'dark'); icon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; localStorage.setItem('theme', theme); };
         themeSwitcher.addEventListener('click', () => { body.classList.contains('dark-mode') ? setTheme('light') : setTheme('dark'); });
-        document.addEventListener('DOMContentLoaded', () => { setTheme(localStorage.getItem('theme') || 'light'); });
+
+        // --- Plan Switcher Logic ---
+        const planButtons = document.querySelectorAll('.plan-switcher .button');
+        const planSections = document.querySelectorAll('.plan-section');
+
+        planButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const targetPlan = button.getAttribute('data-plan');
+
+                // Update button active state
+                planButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // Update section visibility
+                planSections.forEach(section => {
+                    if (section.id === `${targetPlan}-plans`) {
+                        section.classList.add('active');
+                    } else {
+                        section.classList.remove('active');
+                    }
+                });
+            });
+        });
+
+        // --- Reusable PayPal Button Function ---
+        function renderPayPalButton(containerId, planName, amount) {
+            // Ensure the container exists before trying to render a button
+            if (!document.getElementById(containerId)) {
+                return;
+            }
+            paypal.Buttons({
+                createOrder: (data, actions) => {
+                    return actions.order.create({
+                        purchase_units: [{
+                            description: `Nexoro Hosting – ${planName} Plan`,
+                            amount: { value: amount }
+                        }]
+                    });
+                },
+                onApprove: (data, actions) => {
+                    return actions.order.capture().then((details) => {
+                        alert(`Thanks, ${details.payer.name.given_name}! 🎉 Your ${planName} Plan is now active.`);
+                    });
+                },
+                onError: (err) => {
+                    console.error('PayPal Button Error:', err);
+                    alert('An error occurred with your payment. Please try again or contact support.');
+                }
+            }).render(`#${containerId}`);
+        }
+
+        // --- Initialize Page ---
+        document.addEventListener('DOMContentLoaded', () => {
+            setTheme(localStorage.getItem('theme') || 'light');
+
+            // Render PayPal buttons for Minecraft plans
+            renderPayPalButton('paypal-mc-starter', 'Minecraft Starter', '3.00');
+            renderPayPalButton('paypal-mc-pro', 'Minecraft Pro', '8.00');
+            renderPayPalButton('paypal-mc-elite', 'Minecraft Elite', '15.00');
+            renderPayPalButton('paypal-mc-legendary', 'Minecraft Legendary', '25.00');
+            renderPayPalButton('paypal-mc-ultimate', 'Minecraft Ultimate', '37.00');
+            renderPayPalButton('paypal-mc-galaxy', 'Minecraft Galaxy', '50.00');
+
+            // Render PayPal buttons for Web Hosting plans
+            renderPayPalButton('paypal-web-basic', 'Basic Web', '5.00');
+            renderPayPalButton('paypal-web-business', 'Business Web', '10.00');
+            renderPayPalButton('paypal-web-pro', 'Pro Web', '18.00');
+            renderPayPalButton('paypal-web-reseller', 'Reseller', '30.00');
+
+            // Render PayPal buttons for Discord Bot plans
+            renderPayPalButton('paypal-bot-nano', 'Nano Bot', '3.00');
+            renderPayPalButton('paypal-bot-mega', 'Mega Bot', '5.00');
+            renderPayPalButton('paypal-bot-giga', 'Giga Bot', '7.00');
+            renderPayPalButton('paypal-bot-tera', 'Tera Bot', '12.00');
+        });
     </script>
 
 </body>
