@@ -10,24 +10,11 @@
     <!-- PayPal SDK - IMPORTANT: Replace with your own Client ID -->
     <script src="https://www.paypal.com/sdk/js?client-id=Afqmp_Y7nyhwD6C7C3o1ii_IKGNmZiOtPJz36YxQzX042eEP5SG5qDiOFNxCgo0Aw_iJdNIhtuV2zMWF&currency=USD"></script>
     <style>
-      #diagnostic-banner {
-        background: #ffc107;
-        color: #212529;
-        font-weight: bold;
-        text-align: center;
-        padding: 0.5em 0;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 9999;
-        box-shadow: 0 2px 8px #0002;
-        display: none;
-      }
+      /* Remove diagnostic banner styles */
     </style>
 </head>
 <body>
-    <div id="diagnostic-banner">JavaScript is running!</div>
+    <!-- Diagnostic banner removed -->
 
     <header>
         <div class="header-container">
@@ -272,15 +259,5 @@
     </footer>
 
     <script src="js/main.js"></script>
-    <script>
-      // Diagnostic JS banner
-      document.addEventListener('DOMContentLoaded', function() {
-        var banner = document.getElementById('diagnostic-banner');
-        if (banner) banner.style.display = 'block';
-        setTimeout(function() {
-          if (banner) banner.style.display = 'none';
-        }, 3000);
-      });
-    </script>
 </body>
 </html>
