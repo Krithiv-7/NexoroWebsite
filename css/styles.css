@@ -96,6 +96,54 @@ footer {
   box-shadow: 0 0 24px #00f7ff44;
 }
 
+/* Modern button styles */
+.button, button, input[type="submit"] {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7em 2em;
+  font-size: 1.1rem;
+  font-family: 'Orbitron', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 2px 12px #f50b0b44;
+  transition: background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+.button:hover, button:hover, input[type="submit"]:hover {
+  background: #fff;
+  color: var(--accent);
+  box-shadow: 0 4px 24px #f50b0b88;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* Card styles for sections */
+.card {
+  background: rgba(36,36,62,0.98);
+  border-radius: 14px;
+  box-shadow: 0 4px 24px #302b6344;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  transition: box-shadow 0.3s, transform 0.2s;
+}
+.card:hover {
+  box-shadow: 0 8px 32px #04f5e988;
+  transform: translateY(-4px) scale(1.02);
+}
+
+/* Smooth transitions for links */
+a, .button, button {
+  transition: color 0.3s, background 0.3s, box-shadow 0.3s, transform 0.2s;
+}
+
+/* Subtle fade-in animation for containers */
+.container, .card {
+  animation: fadeIn 1.2s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 /* Responsive adjustments */
 @media (max-width: 700px) {
   .container {

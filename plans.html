@@ -5,141 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hosting Plans | Nexoro Hosting</title>
   <link rel="stylesheet" href="css/styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
   <script src="https://www.paypal.com/sdk/js?client-id=Afqmp_Y7nyhwD6C7C3o1ii_IKGNmZiOtPJz36YxQzX042eEP5SG5qDiOFNxCgo0Aw_iJdNIhtuV2zMWF&currency=USD"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/ui"></script>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
-
-  <!-- Header -->
-  <header class="text-center py-10">
-    <h1 class="text-4xl font-extrabold text-indigo-500" data-aos="fade-down">Our Hosting Plans</h1>
-    <p class="text-gray-300 mt-2" data-aos="fade-up" data-aos-delay="100">Pick a plan that suits your gaming empire.</p>
+  <header>
+    <h1>NEXORO Hosting</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="plans.html">Plans</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
   </header>
+  <section class="container">
+    <h2 class="text-center py-10" data-aos="fade-down">Our Hosting Plans</h2>
+    <p class="text-center text-gray-300 mt-2" data-aos="fade-up" data-aos-delay="100">Pick a plan that suits your gaming empire.</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 pb-20">
+      
+      <!-- Plan Card Component -->
+      <div class="card bg-gray-900 rounded-2xl shadow-xl p-6 border border-indigo-600 hover:scale-105 transform transition duration-300" data-aos="fade-up">
+        <h3 class="text-2xl font-bold text-indigo-400">Free Trial</h3>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>✔ 1 GB RAM</li>
+          <li>✔ 5 players limit</li>
+          <li>✔ 2 GB SSD storage</li>
+          <li>❌ No backup</li>
+          <li>❌ No control panel</li>
+          <li>✔  (2 hours only)</li>
+          <li>⏳ One-time trial only</li>
+        </ul>
+      </div>
 
-  <!-- Plans Section -->
-  <section class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6 pb-20">
-    
-    <!-- Plan Card Component -->
-    <div class="bg-gray-900 rounded-2xl shadow-xl p-6 border border-indigo-600 hover:scale-105 transform transition duration-300" data-aos="fade-up">
-      <h2 class="text-2xl font-bold text-indigo-400">Free Trial</h2>
-      <p class="text-white mt-2 text-xl">$0</p>
-      <ul class="mt-4 space-y-2 text-sm text-gray-300">
-        <li>✔ 1 GB RAM</li>
-        <li>✔ 5 players limit</li>
-        <li>✔ 2 GB SSD storage</li>
-        <li>❌ No backup</li>
-        <li>❌ No control panel</li>
-        <li>✔  (2 hours only)</li>
-        <li>⏳ One-time trial only</li>
-      </ul>
+      <div class="card bg-gray-900 rounded-2xl shadow-xl p-6 border border-blue-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-bold text-blue-400">Starter</h3>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>✔ 2 GB RAM</li>
+          <li>✔ 10 players limit</li>
+          <li>✔ 5 GB SSD storage</li>
+          <li>✔ 1 backup</li>
+          <li>✔ 24/7 online</li>
+          <li>✔ Online panel</li>
+          <li>⚡ Instant setup</li>
+        </ul>
+      </div>
+
+      <div class="card bg-gray-900 rounded-2xl shadow-xl p-6 border border-green-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-bold text-green-400">Pro</h3>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>✔ 4 GB RAM</li>
+          <li>✔ 25 players limit</li>
+          <li>✔ 10 GB SSD storage</li>
+          <li>✔ Free subdomain</li>
+          <li>✔ 2 backups</li>
+          <li>✔ 24/7 online</li>
+          <li>✔ Online panel</li>
+          <li>⚡ Instant setup</li>
+        </ul>
+      </div>
+
+      <div class="card bg-gray-900 rounded-2xl shadow-xl p-6 border border-yellow-500 hover:scale-105 transform transition duration-300" data-aos="fade-up">
+        <h3 class="text-2xl font-bold text-yellow-400">Elite</h3>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>✔ 6 GB RAM</li>
+          <li>✔ 40 players limit</li>
+          <li>✔ 15 GB SSD storage</li>
+          <li>✔ Plugin installer</li>
+          <li>✔ Mod support</li>
+          <li>✔ 2 backups </li>
+          <li>✔ 24/7 online</li>
+          <li>⚡ Instant setup</li>
+        </ul>
+      </div>
+
+      <div class="card bg-gray-900 rounded-2xl shadow-xl p-6 border border-purple-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="100">
+        <h3 class="text-2xl font-bold text-purple-400">Legendary</h3>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>✔ 8 GB RAM</li>
+          <li>✔ 60 players limit</li>
+          <li>✔ 25 GB SSD storage</li>
+          <li>✔ Auto restarts</li>
+          <li>✔ 3 backups</li>
+          <li>✔ DDoS Protection</li>
+          <li>✔ 24/7 online</li>
+          <li>⚡ Instant setup</li>
+        </ul>
+      </div>
+
+      <div class="card bg-gray-900 rounded-2xl shadow-xl p-6 border border-pink-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="200">
+        <h3 class="text-2xl font-bold text-pink-400">Ultimate</h3>
+        <ul class="mt-4 space-y-2 text-sm text-gray-300">
+          <li>✔ 12 GB RAM</li>
+          <li>✔ 80 players limit</li>
+          <li>✔ 40 GB SSD storage</li>
+          <li>✔ Multiverse support</li>
+          <li>✔ 5 backups</li>
+          <li>✔ 24/7 online</li>
+          <li>✔ DDoS Protection</li>
+          <li>⚡ Instant setup</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-red-600 to-black-700 text-black rounded-2xl shadow-xl p-6 hover:scale-105 transform transition duration-300 col-span-full lg:col-span-1 lg:col-start-2" data-aos="zoom-in">
+        <h3 class="text-3xl font-bold">Galaxy</h3>
+        <ul class="mt-4 space-y-2 text-sm text-white">
+          <li>🌌 16 GB RAM</li>
+          <li>🌠 100+ players </li>
+          <li>🌐 80 GB SSD storage</li>
+          <li>✔ 24/7 online</li>
+          <li>✅ All features</li>
+          <li>✅ Unlimited backups</li>
+          <li>✅ Premium support</li>
+          <li>✅ Control Panel + Instant setup</li>
+        </ul> 
+        <div did="paypal-button-galaxy" class="mt-4"></div>
+        <script>
+        paypal.Buttons({
+        createOrder: (data, actions) => actions.order.create({
+        purchase_units: [{
+        amount: { value: '50.00' },
+        description: 'Nexoro Hosting– Starter Plan'
+        }]
+        }),
+        onApprove: (data, actions) => actions.order.capture().then((details) => {
+        alert('Thanks, ' + details.payer.name.given_name + '! 🎉 Starter Plan activated.');
+        })
+        }).render('#paypal-button-starter');
+        </script>
+      </div>
+
     </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-xl p-6 border border-blue-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="100">
-      <h2 class="text-2xl font-bold text-blue-400">Starter</h2>
-      <p class="text-white mt-2 text-xl">$3 / month</p>
-      <ul class="mt-4 space-y-2 text-sm text-gray-300">
-        <li>✔ 2 GB RAM</li>
-        <li>✔ 10 players limit</li>
-        <li>✔ 5 GB SSD storage</li>
-        <li>✔ 1 backup</li>
-        <li>✔ 24/7 online</li>
-        <li>✔ Online panel</li>
-        <li>⚡ Instant setup</li>
-      </ul>
-    </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-xl p-6 border border-green-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="200">
-      <h2 class="text-2xl font-bold text-green-400">Pro</h2>
-      <p class="text-white mt-2 text-xl">$8 / month</p>
-      <ul class="mt-4 space-y-2 text-sm text-gray-300">
-        <li>✔ 4 GB RAM</li>
-        <li>✔ 25 players limit</li>
-        <li>✔ 10 GB SSD storage</li>
-        <li>✔ Free subdomain</li>
-        <li>✔ 2 backups</li>
-        <li>✔ 24/7 online</li>
-        <li>✔ Online panel</li>
-        <li>⚡ Instant setup</li>
-      </ul>
-    </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-xl p-6 border border-yellow-500 hover:scale-105 transform transition duration-300" data-aos="fade-up">
-      <h2 class="text-2xl font-bold text-yellow-400">Elite</h2>
-      <p class="text-white mt-2 text-xl">$15 / month</p>
-      <ul class="mt-4 space-y-2 text-sm text-gray-300">
-        <li>✔ 6 GB RAM</li>
-        <li>✔ 40 players limit</li>
-        <li>✔ 15 GB SSD storage</li>
-        <li>✔ Plugin installer</li>
-        <li>✔ Mod support</li>
-        <li>✔ 2 backups </li>
-        <li>✔ 24/7 online</li>
-        <li>⚡ Instant setup</li>
-      </ul>
-    </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-xl p-6 border border-purple-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="100">
-      <h2 class="text-2xl font-bold text-purple-400">Legendary</h2>
-      <p class="text-white mt-2 text-xl">$25 / month</p>
-      <ul class="mt-4 space-y-2 text-sm text-gray-300">
-        <li>✔ 8 GB RAM</li>
-        <li>✔ 60 players limit</li>
-        <li>✔ 25 GB SSD storage</li>
-        <li>✔ Auto restarts</li>
-        <li>✔ 3 backups</li>
-        <li>✔ DDoS Protection</li>
-        <li>✔ 24/7 online</li>
-        <li>⚡ Instant setup</li>
-      </ul>
-    </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-xl p-6 border border-pink-500 hover:scale-105 transform transition duration-300" data-aos="fade-up" data-aos-delay="200">
-      <h2 class="text-2xl font-bold text-pink-400">Ultimate</h2>
-      <p class="text-white mt-2 text-xl">$37 / month</p>
-      <ul class="mt-4 space-y-2 text-sm text-gray-300">
-        <li>✔ 12 GB RAM</li>
-        <li>✔ 80 players limit</li>
-        <li>✔ 40 GB SSD storage</li>
-        <li>✔ Multiverse support</li>
-        <li>✔ 5 backups</li>
-        <li>✔ 24/7 online</li>
-        <li>✔ DDoS Protection</li>
-        <li>⚡ Instant setup</li>
-      </ul>
-    </div>
-
-    <div class="bg-gradient-to-br from-red-600 to-black-700 text-black rounded-2xl shadow-xl p-6 hover:scale-105 transform transition duration-300 col-span-full lg:col-span-1 lg:col-start-2" data-aos="zoom-in">
-      <h2 class="text-3xl font-bold">Galaxy</h2>
-      <p class="text-white mt-2 text-2xl">$50 / month</p>
-      <ul class="mt-4 space-y-2 text-sm text-white">
-        <li>🌌 16 GB RAM</li>
-        <li>🌠 100+ players </li>
-        <li>🌐 80 GB SSD storage</li>
-        <li>✔ 24/7 online</li>
-        <li>✅ All features</li>
-        <li>✅ Unlimited backups</li>
-        <li>✅ Premium support</li>
-        <li>✅ Control Panel + Instant setup</li>
-      </ul> 
-      <div did="paypal-button-galaxy" class="mt-4"></div>
-      <script>
-      paypal.Buttons({
-      createOrder: (data, actions) => actions.order.create({
-      purchase_units: [{
-      amount: { value: '50.00' },
-      description: 'Nexoro Hosting– Starter Plan'
-      }]
-      }),
-      onApprove: (data, actions) => actions.order.capture().then((details) => {
-      alert('Thanks, ' + details.payer.name.given_name + '! 🎉 Starter Plan activated.');
-      })
-      }).render('#paypal-button-starter');
-      </script>
-    </div>
-
   </section>
+  <footer>
+    <p>&copy; 2025 NEXORO Hosting. All rights reserved.</p>
+  </footer>
 
   <!-- AOS Script -->
   <script>
