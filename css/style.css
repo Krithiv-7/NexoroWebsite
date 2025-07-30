@@ -441,3 +441,9 @@ footer {
 .form-status.error {
     color: #dc3545;
 }
+
+.centered-description {
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+}
