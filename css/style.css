@@ -1,3 +1,187 @@
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+@media (min-width: 901px) {
+  .header-right {
+    justify-content: flex-end;
+  }
+}
+/* Sidebar base styles (hidden by default) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: var(--header-bg);
+  box-shadow: -2px 0 12px rgba(0,0,0,0.12);
+  flex-direction: column;
+  padding: 2rem 1.2rem 1rem 1.2rem;
+  transition: right 0.3s;
+  z-index: 999;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar.active {
+  right: 0;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+@media (max-width: 900px) {
+  .main-nav {
+    display: none;
+  }
+  .sidebar-toggle {
+    display: inline-block;
+  }
+  .sidebar {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+@media (min-width: 901px) {
+  .main-nav {
+    display: flex;
+  }
+  .sidebar-toggle {
+    display: none;
+  }
+  .sidebar {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+/* --- Responsive Navigation --- */
+
+/* Desktop navigation styles */
+.main-nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  font-size: 1.08rem;
+}
+.main-nav .button.button-sm {
+  display: inline-block;
+  margin-left: 1.5rem;
+  font-size: 1rem;
+}
+.sidebar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  color: var(--nav-link);
+  cursor: pointer;
+  margin-left: 1.5rem;
+}
+/* Sidebar base styles (hidden by default) */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: var(--header-bg);
+  box-shadow: -2px 0 12px rgba(0,0,0,0.12);
+  flex-direction: column;
+  padding: 2rem 1.2rem 1rem 1.2rem;
+  transition: right 0.3s;
+  z-index: 999;
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar.active {
+  right: 0;
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidebar-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--nav-link);
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .main-nav {
+    display: none;
+  }
+  .sidebar-toggle {
+    display: inline-block;
+  }
+  .sidebar {
+    display: flex;
+  }
+}
+.sidebar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.7rem;
+  color: var(--nav-link);
+  cursor: pointer;
+}
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -260px;
+  width: 260px;
+  height: 100%;
+  background: var(--header-bg);
+  box-shadow: -2px 0 12px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.2rem 1rem 1.2rem;
+  transition: right 0.3s;
+  z-index: 999;
+}
+.sidebar.active {
+  right: 0;
+}
+.sidebar-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--nav-link);
+  align-self: flex-end;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+@media (max-width: 900px) {
+  .main-nav {
+    display: none;
+  }
+  .sidebar-toggle {
+    display: inline-block;
+  }
+  .sidebar {
+    display: flex;
+  }
+}
+@media (min-width: 901px) {
+  .sidebar {
+    display: none !important;
+  }
+}
 /* NEXORO Hosting Central Stylesheet */
 :root {
   /* --- Light Mode (Default) --- */
@@ -91,6 +275,11 @@ nav a:hover {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+}
+@media (min-width: 901px) {
+  .header-right {
+    justify-content: flex-end;
+  }
 }
 
 .container {
@@ -242,28 +431,39 @@ footer {
 }
 
 /* Responsive adjustments */
-@media (max-width: 700px) {
-  nav {
-    flex-direction: column;
-    gap: 1rem;
+@media (max-width: 900px) {
+  .main-nav {
+    display: none;
   }
-  .container {
-    padding: 1rem;
-    margin: 1rem auto;
+  .sidebar-toggle {
+    display: inline-block;
   }
-  h1 { font-size: 2.2rem; }
-  h2 { font-size: 1.5rem; }
+  .sidebar {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .sidebar.active {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
-
-/* --- Form & Social Icon Styles --- */
-.contact-form label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  text-align: left;
+@media (min-width: 901px) {
+  .main-nav {
+    display: flex;
+  }
+  .sidebar-toggle {
+    display: none;
+  }
+  .sidebar {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
 }
-
-.contact-form input,
 .contact-form textarea {
   width: 100%;
   padding: 0.75rem;
@@ -446,4 +646,87 @@ footer {
   text-align: center;
   margin-top: -1rem;
   margin-bottom: 2rem;
+}
+/* --- Responsive Design Improvements --- */
+
+/* Header and navigation stack for tablets/mobile */
+@media (max-width: 900px) {
+  .header-container {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0 1rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  .header-right {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: flex-start;
+  }
+  .logo {
+    margin-bottom: 0.5rem;
+  }
+}
+
+/* Plan switcher buttons stack on mobile */
+@media (max-width: 700px) {
+  .plan-switcher {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: stretch;
+  }
+  .plan-switcher .button {
+    width: 100%;
+    font-size: 1rem;
+  }
+}
+
+/* Cards stack vertically on tablet/mobile */
+@media (max-width: 900px) {
+  .services-grid,
+  .featured-plan-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .card,
+  .featured-plan-container .card {
+    max-width: 100%;
+    margin: 0 auto 1rem auto;
+    padding: 1rem;
+  }
+}
+
+/* Reduce padding and font sizes for smaller screens */
+@media (max-width: 700px) {
+  .container {
+    padding: 0.5rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.2rem;
+  }
+  .card {
+    padding: 1rem;
+  }
+  .social-icons a {
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+  }
+}
+
+/* Ensure PayPal buttons and form elements fit screen */
+@media (max-width: 500px) {
+  .paypal-button-container,
+  .contact-form input,
+  .contact-form textarea {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
 }

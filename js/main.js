@@ -1,3 +1,47 @@
+// Sidebar open/close logic for responsive navigation
+document.addEventListener('DOMContentLoaded', function() {
+  const sidebar = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  const sidebarClose = document.getElementById('sidebar-close');
+  if (sidebar && sidebarToggle && sidebarClose) {
+    sidebarToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      sidebar.classList.add('active');
+    });
+    sidebarClose.addEventListener('click', function(e) {
+      e.stopPropagation();
+      sidebar.classList.remove('active');
+    });
+    document.addEventListener('click', function(e) {
+      if (sidebar.classList.contains('active') &&
+          !sidebar.contains(e.target) &&
+          e.target !== sidebarToggle) {
+        sidebar.classList.remove('active');
+      }
+    });
+  }
+});
+// Sidebar open/close logic
+document.addEventListener('DOMContentLoaded', function() {
+  const sidebar = document.getElementById('sidebar');
+  const sidebarToggle = document.getElementById('sidebar-toggle');
+  const sidebarClose = document.getElementById('sidebar-close');
+  if (sidebar && sidebarToggle && sidebarClose) {
+    sidebarToggle.addEventListener('click', function() {
+      sidebar.classList.add('active');
+    });
+    sidebarClose.addEventListener('click', function() {
+      sidebar.classList.remove('active');
+    });
+    document.addEventListener('click', function(e) {
+      if (sidebar.classList.contains('active') &&
+          !sidebar.contains(e.target) &&
+          e.target !== sidebarToggle) {
+        sidebar.classList.remove('active');
+      }
+    });
+  }
+});
 // --- Reusable Theme Switcher Logic ---
 function initializeThemeSwitcher() {
     const themeSwitcher = document.getElementById('theme-switcher');

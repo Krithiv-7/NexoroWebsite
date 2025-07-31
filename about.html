@@ -14,17 +14,25 @@
         <div class="header-container">
             <h1 class="logo">Nexoro Hosting</h1>
             <div class="header-right">
-                <nav>
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="plans.html">Plans</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-                <a href="#" class="button button-sm">Client Area</a>
+                <!-- Sidebar menu button -->
+                <button id="sidebar-toggle" class="sidebar-toggle" aria-label="Open menu">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <!-- Theme Switcher Button -->
                 <button id="theme-switcher" class="theme-switcher" aria-label="Switch theme"><i class="fas fa-moon"></i></button>
             </div>
         </div>
+        <!-- Sidebar navigation -->
+        <nav id="sidebar" class="sidebar" aria-label="Main menu">
+            <button id="sidebar-close" class="sidebar-close" aria-label="Close menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="plans.html">Plans</a>
+            <a href="contact.html">Contact</a>
+            <a href="#" class="button button-sm">Client Area</a>
+        </nav>
     </header>
 
     <main>
