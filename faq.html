@@ -9,27 +9,100 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs" defer></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
   <script src="https://kit.fontawesome.com/a2e0cf2d3c.js" crossorigin="anonymous"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background-color: #000;
+      color: #00f7ff;
+    }
+
+    header {
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid #00f7ff;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #00f7ff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid #00f7ff;
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 0 10px #00f7ff44;
+    }
+
+    section h2 {
+      margin-top: 2rem;
+      color: #fff;
+    }
+
+    .faq-item {
+      margin-top: 1rem;
+      background-color: #111;
+      border: 1px solid #00f7ff44;
+      padding: 1rem;
+      border-radius: 5px;
+    }
+
+    .faq-question {
+      cursor: pointer;
+      font-weight: 700;
+    }
+
     .faq-answer {
       display: none;
       margin-top: 0.5rem;
       color: #ccc;
     }
+
     .faq-item[open] .faq-answer {
       display: block;
     }
+
     .faq-item[open] .faq-question::after {
       content: '-';
     }
+
     footer {
       text-align: center;
       padding: 2rem;
       color: #aaa;
+      border-top: 2px solid #00f7ff;
+      margin-top: 3rem;
     }
+
     .social-icons a {
       margin: 0 0.5rem;
       color: #00fff7;
       transition: 0.3s;
     }
+
     .social-icons a:hover {
       color: #ff00ff;
     }
@@ -46,7 +119,8 @@
       <a href="faq.html">FAQ</a>
     </nav>
   </header>
-  <div class="container card">
+
+  <div class="container card faq-section">
     <section>
       <h2>General</h2>
       <details class="faq-item">
@@ -62,6 +136,7 @@
         <div class="faq-answer">Yes! We offer a one-time free trial for new users.</div>
       </details>
     </section>
+
     <section>
       <h2>Support</h2>
       <details class="faq-item">
@@ -74,6 +149,7 @@
       </details>
     </section>
   </div>
+
   <footer>
     <p>&copy; 2025 NEXORO Hosting. All rights reserved.</p>
     <div class="social-icons">
@@ -82,13 +158,16 @@
       <a href="#"><i class="fab fa-twitter"></i></a>
       <a href="#"><i class="fab fa-instagram"></i></a>
     </div>
-
-  <footer>
-    ...existing code...
   </footer>
 
   <script src="js/theme-switch.js"></script>
-    gsap.from(".faq-section", { opacity: 0, y: 50, duration: 1.5, ease: "power3.out" });
+  <script>
+    gsap.from(".faq-section", {
+      opacity: 0,
+      y: 50,
+      duration: 1.5,
+      ease: "power3.out"
+    });
   </script>
 </body>
 </html>
