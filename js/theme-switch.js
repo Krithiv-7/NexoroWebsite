@@ -1,6 +1,7 @@
 // NEXORO Hosting Theme Switcher
-(function() {
+(function () {
   const THEME_KEY = 'nexoro-theme';
+
   const darkTheme = {
     '--bg-gradient': 'linear-gradient(120deg, #0f0c29 0%, #302b63 50%, #24243e 100%)',
     '--header-bg': 'linear-gradient(90deg, #04f5e9 0%, #0f0c29 100%)',
@@ -12,6 +13,7 @@
     '--nav-link-hover': '#f50b0b',
     '--footer-color': '#fff'
   };
+
   const lightTheme = {
     '--bg-gradient': 'linear-gradient(120deg, #f7fafc 0%, #e3e8ee 50%, #cbd5e1 100%)',
     '--header-bg': 'linear-gradient(90deg, #00f7ff 0%, #e3e8ee 100%)',
@@ -29,8 +31,7 @@
     Object.entries(theme).forEach(([key, value]) => {
       root.style.setProperty(key, value);
     });
-    document.body.style.background = theme['--bg-gradient'];
-    document.body.style.color = theme['--text-color'];
+    // Removed: direct background and color setting on body
   }
 
   function setTheme(mode) {
@@ -47,7 +48,6 @@
     return localStorage.getItem(THEME_KEY) || 'dark';
   }
 
-  // Add theme switch button
   function addSwitcher() {
     const btn = document.createElement('button');
     btn.id = 'theme-switcher';
@@ -65,8 +65,9 @@
     btn.style.cursor = 'pointer';
     btn.style.fontSize = '1.5rem';
     btn.title = 'Toggle theme';
-    btn.innerHTML = '🌙';
-    btn.onclick = function() {
+    btn.innerHTML = getTheme() === 'light' ? '☀️' : '🌙';
+
+    btn.onclick = function () {
       const current = getTheme();
       if (current === 'dark') {
         setTheme('light');
@@ -76,12 +77,11 @@
         btn.innerHTML = '🌙';
       }
     };
+
     document.body.appendChild(btn);
-    // Set initial icon
-    if (getTheme() === 'light') btn.innerHTML = '☀️';
   }
 
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     setTheme(getTheme());
     addSwitcher();
   });
