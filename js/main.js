@@ -94,12 +94,12 @@ function initializeContactForm() {
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        const webhookURL = 'https://discord.com/api/webhooks/1400114420562133014/MxaDLfK3Y9Nbv2li_nL6HWcYEaucnzyEMBKjP6zmrxiDsdco2sfrN-m_uhkyIc8ZvmFs';
+        const webhookURL = 'https://discord.com/api/webhooks/1400216470738178088/Az-BJmow9x1LAOzzxg1v9TIoIP-3rnBAp7ZMkQKXvfwAuAMUXVAYJNtZ39zIc-qSF2sj';
         const submitButton = contactForm.querySelector('button[type="submit"]');
         const formData = new FormData(contactForm);
 
         const payload = {
-            username: "Nexoro Contact Bot",
+            username: "Nexoro Contact Forum",
             embeds: [{
                 title: `New Message from ${formData.get('name')}`,
                 color: 16761095,
@@ -108,7 +108,7 @@ function initializeContactForm() {
                     { name: "Timestamp", value: new Date().toUTCString(), inline: true },
                     { name: "Message", value: formData.get('message') }
                 ],
-                footer: { text: "Submitted via nexorohosting.com" }
+                footer: { text: "Submitted via nx1.krithiv.dev" }
             }]
         };
 
